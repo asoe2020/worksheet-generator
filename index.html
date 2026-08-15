@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Free Worksheet Generator - UK Years 1-6</title>
+<meta property="og:image" content="https://sahirvhora.github.io/worksheet-generator/preview.svg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sahirvhora.github.io/worksheet-generator/preview.svg">
+<meta name="description" content="Free printable worksheets for UK primary school children. Maths, English and Science for Years 1-6. No account needed."/>
+<meta property="og:title" content="Worksheet Generator - Free KS1 & KS2 Printables">
+<meta property="og:description" content="Free printable worksheets for UK primary school children. Generate Maths, English and Science practice sheets for Years 1-6. No account needed.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sahirvhora.github.io/worksheet-generator/">
+<link rel="canonical" href="https://sahirvhora.github.io/worksheet-generator/">
+<meta name="robots" content="index, follow">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#7C3AED">
+<link rel="manifest" href="/worksheet-generator/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23534AB7'/%3E%3Crect x='14' y='16' width='36' height='5' rx='2.5' fill='white' opacity='.95'/%3E%3Crect x='14' y='26' width='28' height='5' rx='2.5' fill='white' opacity='.8'/%3E%3Crect x='14' y='36' width='32' height='5' rx='2.5' fill='white' opacity='.8'/%3E%3Crect x='14' y='46' width='20' height='5' rx='2.5' fill='white' opacity='.6'/%3E%3C/svg%3E"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#534AB7;--purple-light:#EEEDFE;--purple-dark:#3C3489;--purple-mid:#7F77DD;
+  --teal:#0F6E56;--teal-light:#E1F5EE;--teal-mid:#1D9E75;
+  --amber:#854F0B;--amber-light:#FAEEDA;
+  --blue:#185FA5;--blue-light:#E6F1FB;
+  --coral:#993C1D;--coral-light:#FAECE7;
+  --green:#3B6D11;--green-light:#EAF3DE;
+  --text:#1a1a1a;--muted:#6b6b6b;--border:#e0ddd6;
+  --bg:#ffffff;--bg2:#f7f6f2;
+  --radius:10px;--shadow:0 2px 16px rgba(0,0,0,.09);
+}
+@media(prefers-color-scheme:dark){
+  :root{--text:#e8e6df;--muted:#9c9a92;--border:#3a3835;--bg:#1c1b18;--bg2:#252420;
+    --purple-light:#26215C;--teal-light:#04342C;--amber-light:#412402;--blue-light:#042C53;--coral-light:#4A1B0C;--green-light:#173404;}
+}
+body{font-family:"Nunito",sans-serif;background:var(--bg2);color:var(--text);min-height:100vh;padding:16px}
+.container{max-width:920px;margin:0 auto;background:var(--bg);border-radius:16px;padding:24px 28px;box-shadow:var(--shadow)}
+
+/* Header */
+.header{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.logo{width:48px;height:48px;border-radius:12px;background:var(--purple);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo svg{width:28px;height:28px}
+.brand-title{font-size:22px;font-weight:800;color:var(--text);letter-spacing:-.3px}
+.brand-sub{font-size:12px;color:var(--muted);font-weight:600;margin-top:2px}
+.header-right{margin-left:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.header-badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:var(--green-light);color:var(--green);border:1px solid var(--border)}
+.key-status{display:flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;border:1.5px solid var(--border);cursor:pointer;background:var(--bg2);color:var(--muted);transition:all .15s}
+.key-status:hover{border-color:var(--muted);color:var(--text)}
+.key-status.has-key{border-color:var(--teal);background:var(--teal-light);color:var(--teal)}
+.key-dot{width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0}
+
+/* Welcome screen */
+.welcome-screen{display:none}
+.welcome-screen.show{display:block}
+.welcome-hero{text-align:center;padding:8px 0 24px}
+.welcome-hero h2{font-size:24px;font-weight:900;color:var(--text);margin-bottom:8px}
+.welcome-hero p{font-size:13px;color:var(--muted);max-width:460px;margin:0 auto;line-height:1.7}
+.mode-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px}
+@media(max-width:800px){.mode-cards{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.mode-cards{grid-template-columns:1fr}}
+.mode-card{border-radius:14px;padding:20px 18px;border:2px solid var(--border);transition:all .18s;background:var(--bg2)}
+.mode-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.mode-card.free-card{border-color:var(--teal-mid);background:var(--teal-light)}
+.mode-card.ai-card{border-color:var(--purple-mid);background:var(--purple-light)}
+.mode-card.kiddo-card{border-color:#E11D48;background:#FFF1F2}
+.mode-card-icon{font-size:28px;margin-bottom:8px}
+.mode-card-tag{display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:800;margin-bottom:8px;color:#fff}
+.free-card .mode-card-tag{background:var(--teal)}
+.ai-card .mode-card-tag{background:var(--purple)}
+.kiddo-card .mode-card-tag{background:#E11D48}
+.mode-card-title{font-size:16px;font-weight:800;margin-bottom:6px}
+.free-card .mode-card-title{color:var(--teal)}
+.ai-card .mode-card-title{color:var(--purple)}
+.kiddo-card .mode-card-title{color:#BE123C}
+.mode-card-desc{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.mode-card-bullets{list-style:none;display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
+.mode-card-bullets li{font-size:12px;color:var(--muted);display:flex;gap:8px;line-height:1.5}
+.free-card .mode-card-bullets li::before{content:"✓";color:var(--teal);font-weight:900;flex-shrink:0}
+.ai-card .mode-card-bullets li::before{content:"✓";color:var(--purple);font-weight:900;flex-shrink:0}
+.kiddo-card .mode-card-bullets li::before{content:"✓";color:#E11D48;font-weight:900;flex-shrink:0}
+.mode-card-btn{width:100%;padding:11px;border-radius:8px;font-size:14px;font-weight:800;cursor:pointer;border:none;font-family:"Nunito",sans-serif;transition:all .15s}
+.free-card .mode-card-btn{background:var(--teal);color:#fff}
+.free-card .mode-card-btn:hover{background:#085041}
+.ai-card .mode-card-btn{background:var(--purple);color:#fff}
+.ai-card .mode-card-btn:hover{background:var(--purple-dark)}
+.kiddo-card .mode-card-btn{background:#E11D48;color:#fff}
+.kiddo-card .mode-card-btn:hover{background:#9F1239}
+.welcome-note{text-align:center;font-size:11px;color:var(--muted);padding-bottom:8px}
+.welcome-note a{color:var(--purple);text-decoration:none;font-weight:700;cursor:pointer}
+
+/* Main app */
+.main-app{display:none}
+.main-app.show{display:block}
+.mode-banner{border-radius:var(--radius);padding:11px 16px;margin-bottom:18px;font-size:12px;line-height:1.6;border:1.5px solid;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.mode-switcher{display:flex;background:var(--bg2);border-radius:10px;padding:4px;gap:4px;border:1px solid var(--border);margin-bottom:18px}
+.mode-tab{flex:1;padding:9px 12px;border-radius:7px;font-size:13px;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--muted);font-family:"Nunito",sans-serif;transition:all .18s;display:flex;align-items:center;justify-content:center;gap:7px;line-height:1.3;text-align:center}
+.mode-tab:hover{color:var(--text)}
+.mode-tab.active{background:var(--bg);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,.1)}
+.mode-tab.active.print-tab{color:var(--teal)}
+.mode-tab.active.quiz-tab{color:var(--purple)}
+.mode-tab-icon{font-size:16px;flex-shrink:0}
+.mode-tab-label{display:flex;flex-direction:column;align-items:flex-start}
+.mode-tab-title{font-size:13px;font-weight:800;line-height:1.2}
+.mode-tab-sub{font-size:10px;font-weight:600;opacity:.7;line-height:1.2}
+@media(max-width:420px){.mode-tab-sub{display:none}}
+.quiz-link-bar{background:var(--purple-light);border:1.5px solid var(--purple-mid);border-radius:var(--radius);padding:12px 16px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.quiz-link-bar p{font-size:12px;color:var(--purple-dark);font-weight:600;line-height:1.5}
+.quiz-link-btn{padding:8px 16px;border-radius:8px;font-size:12px;font-weight:800;cursor:pointer;border:none;background:var(--purple);color:#fff;font-family:"Nunito",sans-serif;white-space:nowrap;text-decoration:none;display:inline-block;transition:all .15s}
+.quiz-link-btn:hover{background:var(--purple-dark)}
+.mode-banner.free-mode{background:var(--teal-light);border-color:var(--teal-mid);color:var(--teal)}
+.mode-banner.ai-mode{background:var(--green-light);border-color:var(--green);color:var(--green)}
+.mode-banner strong{font-weight:800}
+.banner-btn{padding:4px 12px;border-radius:12px;font-size:10px;font-weight:800;border:1.5px solid currentColor;background:transparent;cursor:pointer;color:inherit;font-family:"Nunito",sans-serif;flex-shrink:0}
+
+/* Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:16px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--bg);border-radius:16px;padding:26px 28px;max-width:500px;width:100%;box-shadow:0 8px 40px rgba(0,0,0,.25)}
+.modal-title{font-size:18px;font-weight:800;color:var(--text);margin-bottom:8px}
+.modal-sub{font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.7}
+.modal-sub a{color:var(--purple);text-decoration:none;font-weight:700}
+.modal-steps{margin:0 0 16px;display:flex;flex-direction:column;gap:9px}
+.modal-step{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--muted);line-height:1.6}
+.step-num{width:20px;height:20px;border-radius:50%;background:var(--purple-light);color:var(--purple);font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.modal-input{width:100%;padding:10px 13px;border-radius:8px;border:1.5px solid var(--border);background:var(--bg2);color:var(--text);font-size:14px;font-family:"Nunito",sans-serif;font-weight:600;margin-bottom:6px}
+.modal-input:focus{outline:none;border-color:var(--purple)}
+.modal-hint{font-size:11px;color:var(--muted);margin-bottom:16px}
+.modal-btns{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+.modal-btn{padding:9px 18px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;border:1.5px solid var(--border);background:var(--bg2);color:var(--muted);font-family:"Nunito",sans-serif;transition:all .15s}
+.modal-btn:hover{border-color:var(--muted);color:var(--text)}
+.modal-btn.primary{background:var(--purple);border-color:var(--purple);color:#fff}
+.modal-btn.primary:hover{background:var(--purple-dark)}
+.modal-btn.danger{background:var(--coral-light);border-color:var(--coral);color:var(--coral)}
+
+/* Curriculum */
+.section-label{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px}
+.pill-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.pill{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;border:1.5px solid var(--border);color:var(--muted);background:var(--bg2);transition:all .15s;font-family:"Nunito",sans-serif}
+.pill:hover{border-color:var(--muted)}
+.pill.active{border-color:var(--purple);background:var(--purple-light);color:var(--purple)}
+.subj-wrap{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.subj-btn{flex:1;min-width:120px;padding:10px 8px;border-radius:var(--radius);font-size:13px;font-weight:700;cursor:pointer;border:2px solid var(--border);color:var(--muted);background:var(--bg2);transition:all .15s;font-family:"Nunito",sans-serif}
+.subj-btn:hover{border-color:var(--muted)}
+.subj-btn.maths.active{border-color:var(--teal);background:var(--teal-light);color:var(--teal)}
+.subj-btn.english.active{border-color:var(--blue);background:var(--blue-light);color:var(--blue)}
+.subj-btn.science.active{border-color:var(--amber);background:var(--amber-light);color:var(--amber)}
+.subj-btn.reading.active{border-color:var(--blue);background:var(--blue-light);color:var(--blue)}
+.subj-btn.vocab.active{border-color:#854F0B;background:#FAEEDA;color:#854F0B}
+.topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;margin-bottom:18px}
+.topic-card{padding:10px 12px;border-radius:8px;border:1.5px solid var(--border);cursor:pointer;transition:all .15s;background:var(--bg2)}
+.topic-card:hover{border-color:var(--muted);background:var(--bg)}
+.topic-card.selected{border-color:var(--purple);background:var(--purple-light)}
+.tc-name{font-size:12px;font-weight:700;color:var(--text)}
+.tc-badge{font-size:10px;color:var(--muted);margin-top:2px;font-weight:600}
+.opts{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;margin-bottom:20px}
+.opt-group{display:flex;flex-direction:column;gap:4px}
+.opt-group label{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.opt-group input[type=text]{padding:7px 11px;border-radius:7px;border:1.5px solid var(--border);background:var(--bg2);color:var(--text);font-size:13px;font-family:"Nunito",sans-serif;font-weight:600;min-width:160px}
+.opt-group input:focus,.opt-group select:focus{outline:none;border-color:var(--purple)}
+.opt-group select{padding:7px 11px;border-radius:7px;border:1.5px solid var(--border);background:var(--bg2);color:var(--text);font-size:13px;font-family:"Nunito",sans-serif;font-weight:600;cursor:pointer}
+.gen-btn{padding:11px 24px;border-radius:8px;font-size:14px;font-weight:800;cursor:pointer;border:none;background:var(--purple);color:#fff;transition:all .15s;font-family:"Nunito",sans-serif}
+.gen-btn:hover:not(:disabled){background:var(--purple-dark);transform:translateY(-1px)}
+.gen-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.progress-section{margin-bottom:20px;padding:14px 16px;background:var(--bg2);border-radius:var(--radius);border:1px solid var(--border)}
+.progress-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.progress-title{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.clear-btn{font-size:11px;color:var(--muted);cursor:pointer;background:none;border:none;font-family:"Nunito",sans-serif;text-decoration:underline}
+.progress-grid{display:flex;flex-wrap:wrap;gap:5px}
+.badge{padding:4px 9px;border-radius:12px;font-size:10px;font-weight:700;background:var(--teal-light);color:var(--teal);display:flex;align-items:center;gap:5px;border:1px solid var(--border)}
+.badge .x{cursor:pointer;opacity:.6;font-size:10px}.badge .x:hover{opacity:1}
+.no-progress{font-size:12px;color:var(--muted);font-style:italic}
+.divider{height:1px;background:var(--border);margin:20px 0}
+
+/* Worksheet */
+#worksheet-area{display:none}
+.ws-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.ws-title{font-size:17px;font-weight:800;color:var(--text)}
+.ws-meta{font-size:11px;color:var(--muted);margin-top:2px;font-weight:600}
+.btn-row{display:flex;gap:7px;flex-wrap:wrap}
+.action-btn{padding:7px 14px;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;border:1.5px solid var(--border);background:var(--bg2);color:var(--muted);transition:all .15s;font-family:"Nunito",sans-serif}
+.fab-print{position:fixed;bottom:max(24px,env(safe-area-inset-bottom) + 12px);right:max(24px,env(safe-area-inset-right) + 12px);z-index:50;display:none;align-items:center;gap:8px;padding:14px 20px;border-radius:50px;border:none;background:var(--purple);color:#fff;font-size:14px;font-weight:800;box-shadow:0 6px 20px rgba(83,74,183,.35);cursor:pointer;font-family:"Nunito",sans-serif;transition:transform .15s,box-shadow .15s}
+.fab-print:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(83,74,183,.45)}
+.fab-print.show{display:flex}
+.action-btn:hover{border-color:var(--muted);color:var(--text)}
+.action-btn.primary{background:var(--purple);border-color:var(--purple);color:#fff}
+.action-btn.primary:hover{background:var(--purple-dark)}
+.star-section{margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.star-label{font-size:12px;font-weight:700;color:var(--muted)}
+.stars{display:flex;gap:3px}
+.star{font-size:24px;cursor:pointer;opacity:.3;transition:all .1s}
+.star:hover,.star.lit{opacity:1;transform:scale(1.12)}
+#star-msg{font-size:12px;color:var(--muted);font-style:italic}
+#ws-content{background:var(--bg2);border-radius:var(--radius);padding:20px 24px;border:1px solid var(--border);font-size:14px;line-height:2;color:var(--text);white-space:pre-wrap;font-family:"Nunito",sans-serif;min-height:200px}
+.answer-sheet{margin-top:18px;padding-top:14px;border-top:2px dashed var(--border)}
+.marking-guide{margin-top:14px;padding:12px 14px;border-radius:8px;background:var(--amber-light);color:var(--amber);font-size:12px;line-height:1.7;white-space:normal}
+.loading-msg{text-align:center;padding:40px;color:var(--muted)}
+.spinner{display:inline-block;width:18px;height:18px;border:2.5px solid var(--border);border-top-color:var(--purple);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:8px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error-msg{color:var(--coral);background:var(--coral-light);border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.8}
+.error-msg a{color:var(--coral)}
+.footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--border);text-align:center;font-size:11px;color:var(--muted)}
+.footer a{color:var(--purple);text-decoration:none}
+@media(max-width:600px){.container{padding:16px}.subj-wrap{flex-direction:column}.opts{flex-direction:column;align-items:stretch}.header-badge{display:none}}
+@media print{
+  body{background:white;padding:0}
+  .container{box-shadow:none;border-radius:0;padding:20px 28px}
+  .welcome-screen,.header,.footer,.mode-switcher,.mode-banner,.quiz-link-bar,
+  .section-label,.pill-row,.subj-wrap,.topic-grid,.opts,.progress-section,
+  .divider,.star-section,.ws-header,.modal-overlay{display:none!important}
+  .main-app.show{display:block!important}
+  #worksheet-area{display:block!important}
+  #ws-content{border:none;padding:0;background:white;line-height:2.1}
+  .answer-sheet{break-before:page;border-top:none}
+  .marking-guide{border:1px solid #ddd;background:white;color:#333}
+}
+</style>
+</head>
+<body>
+
+<!-- API Key Modal -->
+<div class="modal-overlay" id="key-modal">
+  <div class="modal">
+    <div class="modal-title" id="modal-title">Set up your API key</div>
+    <div class="modal-sub" id="modal-sub">Your API key unlocks unlimited AI-generated worksheets on every topic. Stored only in your browser - never shared.</div>
+    <div class="modal-steps" id="modal-steps">
+      <div class="modal-step"><div class="step-num">1</div><div>Go to <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> and sign up free</div></div>
+      <div class="modal-step"><div class="step-num">2</div><div>Click <strong>API Keys</strong> in the left menu, then <strong>+ Create Key</strong></div></div>
+      <div class="modal-step"><div class="step-num">3</div><div>Copy the key the moment it appears - it starts with <code>sk-ant-</code></div></div>
+      <div class="modal-step"><div class="step-num">4</div><div>Paste it below. New accounts get <strong>free starter credits</strong> - each worksheet costs less than a penny</div></div>
+    </div>
+    <input type="password" class="modal-input" id="modal-key-input" placeholder="sk-ant-api03-..." autocomplete="off"/>
+    <div class="modal-hint">Saved in this browser only. Change or remove it any time from the button in the top-right corner.</div>
+    <div class="modal-btns">
+      <button class="modal-btn danger" id="modal-remove-btn" onclick="removeKey()" style="display:none">Remove key</button>
+      <button class="modal-btn" onclick="closeModal()">Cancel</button>
+      <button class="modal-btn primary" onclick="saveKey()">Save and activate</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">
+      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="2" width="22" height="26" rx="3" fill="white" opacity="0.15"/>
+        <rect x="3" y="2" width="22" height="26" rx="3" stroke="white" stroke-width="1.5" opacity="0.9"/>
+        <rect x="7" y="7" width="14" height="2.5" rx="1.25" fill="white"/>
+        <rect x="7" y="12" width="10" height="2.5" rx="1.25" fill="white" opacity="0.85"/>
+        <rect x="7" y="17" width="12" height="2.5" rx="1.25" fill="white" opacity="0.85"/>
+        <rect x="7" y="22" width="7" height="2.5" rx="1.25" fill="white" opacity="0.6"/>
+      </svg>
+    </div>
+    <div>
+      <div class="brand-title">Free Worksheet Generator</div>
+      <div class="brand-sub">Printable worksheets &amp; online quizzes - UK National Curriculum - Years 1 to 6</div>
+    </div>
+    <div class="header-right">
+      <div class="header-badge">Always free</div>
+      <div class="key-status" id="key-status-btn" onclick="openModal()">
+        <div class="key-dot"></div>
+        <span id="key-status-label">Add API key</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WELCOME SCREEN: first-time visitors only -->
+  <div class="welcome-screen" id="welcome-screen">
+    <div class="welcome-hero">
+      <h2>How would you like to use it?</h2>
+      <p>Both are completely free. Start instantly or unlock AI-powered worksheets - your choice, switch anytime.</p>
+    </div>
+    <div class="mode-cards">
+      <div class="mode-card free-card">
+        <div class="mode-card-icon">&#128214;</div>
+        <div class="mode-card-tag">No sign-up needed</div>
+        <div class="mode-card-title">Use instantly - no setup</div>
+        <div class="mode-card-desc">Jump straight in. No accounts, no passwords. Uses our built-in question library.</div>
+        <ul class="mode-card-bullets">
+          <li>Works right now, zero setup</li>
+          <li>All 3 subjects, Years 1 to 6</li>
+          <li>Questions shuffle randomly</li>
+          <li>Answer key on every sheet</li>
+          <li>Print or save as PDF</li>
+        </ul>
+        <button class="mode-card-btn" onclick="startFreeMode()">Start for free &#8594;</button>
+      </div>
+      <div class="mode-card kiddo-card">
+        <div class="mode-card-icon">🧒</div>
+        <div class="mode-card-tag">Reception - Year 2</div>
+        <div class="mode-card-title">Kiddo Mode</div>
+        <div class="mode-card-desc">Simpler worksheets for younger children. Bigger text, fewer questions, more pictures. Perfect for Reception to Year 2.</div>
+        <ul class="mode-card-bullets">
+          <li>Early years & KS1 topics</li>
+          <li>Larger font, simpler layout</li>
+          <li>Number bonds, phonics, shapes</li>
+          <li>No setup - instant download</li>
+        </ul>
+        <button class="mode-card-btn" onclick="startKiddoMode()">Start Kiddo Mode &#8594;</button>
+      </div>
+      <div class="mode-card ai-card">
+        <div class="mode-card-icon">&#10024;</div>
+        <div class="mode-card-tag">Unlimited unique worksheets</div>
+        <div class="mode-card-title">Unlock AI-generated worksheets</div>
+        <div class="mode-card-desc">Get a free API key from Anthropic (2 minutes). Every worksheet is freshly written by Claude AI - never the same twice.</div>
+        <ul class="mode-card-bullets">
+          <li>Brand new questions every time</li>
+          <li>Tailored exactly to the topic</li>
+          <li>3 difficulty levels per topic</li>
+          <li>Parent tips on each sheet</li>
+          <li>Less than a penny per worksheet</li>
+        </ul>
+        <button class="mode-card-btn" onclick="startAiMode()">Set up free API key &#8594;</button>
+      </div>
+    </div>
+    <div class="welcome-note">Not sure? <a onclick="startFreeMode()">Start free</a> and upgrade anytime - no pressure.</div>
+  </div>
+
+  <!-- MAIN APP -->
+  <div class="main-app" id="main-app">
+
+    <!-- Mode switcher -->
+    <div class="mode-switcher" id="mode-switcher">
+      <button class="mode-tab print-tab active" id="tab-print" onclick="switchMode('print')">
+        <span class="mode-tab-icon">&#128196;</span>
+        <span class="mode-tab-label">
+          <span class="mode-tab-title">Printable worksheet</span>
+          <span class="mode-tab-sub">Print &amp; write with pencil</span>
+        </span>
+      </button>
+      <button class="mode-tab quiz-tab" id="tab-quiz" onclick="switchMode('quiz')">
+        <span class="mode-tab-icon">&#9654;</span>
+        <span class="mode-tab-label">
+          <span class="mode-tab-title">Interactive quiz</span>
+          <span class="mode-tab-sub">Answer online, see results</span>
+        </span>
+      </button>
+    </div>
+
+    <div class="mode-banner" id="mode-banner"></div>
+
+    <!-- Quiz redirect panel (shown when quiz tab is selected) -->
+    <div class="quiz-link-bar" id="quiz-link-bar" style="display:none">
+      <p>&#10024; Choose your year, subject and topic below, then launch the interactive quiz in your browser.</p>
+      <a class="quiz-link-btn" id="quiz-launch-btn" href="quiz.html" target="_blank">Open quiz &#8594;</a>
+    </div>
+
+    <div class="section-label">Year group</div>
+    <div class="pill-row" id="year-pills">
+      <span class="pill" data-year="1">Year 1</span>
+      <span class="pill" data-year="2">Year 2</span>
+      <span class="pill" data-year="3">Year 3</span>
+      <span class="pill active" data-year="4">Year 4</span>
+      <span class="pill" data-year="5">Year 5</span>
+      <span class="pill" data-year="6">Year 6</span>
+    </div>
+
+    <div class="section-label">Subject</div>
+    <div class="subj-wrap">
+      <button class="subj-btn maths active" data-subj="Maths">&#10133; Maths</button>
+      <button class="subj-btn english" data-subj="English">&#128216; English</button>
+      <button class="subj-btn science" data-subj="Science">&#128300; Science</button>
+      <button class="subj-btn reading" data-subj="Reading">&#128214; Reading</button>
+      <button class="subj-btn vocab" data-subj="Vocabulary">&#129521; Vocabulary</button>
+    </div>
+
+    <div class="section-label" id="topic-label">Topics - Year 4 - Maths</div>
+    <div class="topic-grid" id="topic-grid"></div>
+
+    <div class="opts">
+      <div class="opt-group">
+        <label>Child name (optional)</label>
+        <input type="text" id="child-name" placeholder="e.g. Amara" maxlength="30"/>
+      </div>
+      <div class="opt-group">
+        <label>Questions</label>
+        <select id="q-count">
+          <option value="10">10 questions</option>
+          <option value="15" selected>15 questions</option>
+          <option value="20">20 questions</option>
+        </select>
+      </div>
+      <div class="opt-group">
+        <label>Difficulty</label>
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+      <div class="opt-group">
+        <label>Font size</label>
+        <select id="font-size" onchange="applyFontSize(this.value)">
+          <option value="13px">Small</option>
+          <option value="15px" selected>Medium</option>
+          <option value="18px">Large</option>
+          <option value="22px">Extra large</option>
+        </select>
+      </div>
+      <div class="opt-group" style="justify-content:flex-end">
+        <div style="height:2px"></div>
+        <button class="gen-btn" id="gen-btn" disabled>Generate worksheet</button>
+      </div>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-header">
+        <div class="progress-title">Completed topics</div>
+        <button class="clear-btn" onclick="clearProgress()">Clear all</button>
+      </div>
+      <div class="progress-grid" id="progress-grid">
+        <span class="no-progress">No topics completed yet - tick them off as you go!</span>
+      </div>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-header">
+        <div class="progress-title">Recent worksheets</div>
+        <button class="clear-btn" onclick="clearWorksheetHistory()">Clear history</button>
+      </div>
+      <div class="progress-grid" id="worksheet-history-grid">
+        <span class="no-progress">Generated worksheets will appear here for parent review.</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <button class="fab-print" id="fab-print" data-testid="print-fab" onclick="window.print()" aria-label="Print worksheet">🖨️ Print</button>
+
+    <div id="worksheet-area">
+      <div class="ws-header">
+        <div>
+          <div class="ws-title" id="ws-title"></div>
+          <div class="ws-meta" id="ws-meta"></div>
+        </div>
+        <div class="btn-row">
+          <button class="action-btn" onclick="markDone()">Mark done</button>
+          <button class="action-btn" onclick="generateWorksheet()">Regenerate</button>
+          <button class="action-btn primary" onclick="window.print()">Print / Save PDF</button>
+        </div>
+      </div>
+      <div class="star-section">
+        <span class="star-label">How did it go?</span>
+        <div class="stars" id="stars">
+          <span class="star" data-v="1">&#11088;</span>
+          <span class="star" data-v="2">&#11088;</span>
+          <span class="star" data-v="3">&#11088;</span>
+          <span class="star" data-v="4">&#11088;</span>
+          <span class="star" data-v="5">&#11088;</span>
+        </div>
+        <span id="star-msg"></span>
+      </div>
+      <div id="ws-content"></div>
+    </div>
+
+  </div><!-- /main-app -->
+
+  <div style="text-align:center;padding:12px 20px;background:var(--bg);border-top:1px solid var(--border);margin-top:20px;font-size:13px;color:var(--muted)">
+    ⭐ <b>Done with worksheets?</b> Keep learning at
+    <a href="https://sahirvhora.github.io/starlearn/" style="color:var(--purple);font-weight:600">StarLearn →</a>
+  </div>
+  <div class="footer">
+    Built with love for families and schools &middot; Always free &middot; No ads &middot;
+    <a href="https://github.com/SahirVhora/worksheet-generator" target="_blank">View on GitHub</a>
+  </div>
+</div>
+
+<script src="data/curriculum.js"></script>
+<script src="data/free-banks.js"></script>
+<script src="data/topic-banks.js"></script>
+<script>
+const STAR_MSGS=["","That was tricky - keep practising!","Getting there, well done!","Good effort!","Great work!","Amazing - star learner!"];
+let selYear=4,selSubj="Maths",selTopic=null,selStars=0;
+let progress=JSON.parse(localStorage.getItem("ws-progress")||"[]");
+let worksheetHistory=JSON.parse(localStorage.getItem("ws-history")||"[]");
+
+// ── Welcome / App display ─────────────────────────────────────────
+function showWelcome(){
+  document.getElementById("welcome-screen").classList.add("show");
+  document.getElementById("main-app").classList.remove("show");
+  document.getElementById("fab-print").classList.remove("show");
+}
+function showApp(){
+  document.getElementById("welcome-screen").classList.remove("show");
+  document.getElementById("main-app").classList.add("show");
+}
+function applyFontSize(size){
+  const el=document.getElementById("ws-content");
+  if(el) el.style.fontSize=size;
+}
+
+function startKiddoMode(){
+  localStorage.setItem("ws-mode-chosen","true");
+  localStorage.setItem("ws-kiddo-mode","true");
+  showApp(); updateKeyUI();
+  // Pre-select early years: year=1 or 2, smaller question count
+  setTimeout(() => {
+    const yearSelect = document.getElementById('year-select');
+    const countInput = document.getElementById('question-count');
+    if (yearSelect) yearSelect.value = '1';
+    if (countInput) countInput.value = '5';
+  }, 200);
+}
+function startFreeMode(){
+  localStorage.setItem("ws-mode-chosen","true");
+  localStorage.removeItem("ws-kiddo-mode");
+  showApp(); updateKeyUI();
+}
+function startAiMode(){
+  localStorage.setItem("ws-mode-chosen","true");
+  showApp(); updateKeyUI(); openModal();
+}
+
+// ── API Key ───────────────────────────────────────────────────────
+localStorage.removeItem("ws-api-key"); // Purge keys saved by older releases.
+function getApiKey(){return sessionStorage.getItem("ws-api-key")||"";}
+function openModal(){
+  const has=getApiKey();
+  document.getElementById("modal-key-input").value="";
+  document.getElementById("modal-remove-btn").style.display=has?"block":"none";
+  document.getElementById("modal-title").textContent=has?"Change API key":"Set up your API key";
+  document.getElementById("modal-steps").style.display=has?"none":"flex";
+  document.getElementById("modal-sub").textContent=has
+    ?"Paste a new key below to replace it, or click Remove to go back to free mode."
+    :"Your API key unlocks unlimited AI-generated worksheets. Kept only for this browser tab session.";
+  document.getElementById("key-modal").classList.add("open");
+  if(!has) setTimeout(()=>document.getElementById("modal-key-input").focus(),120);
+}
+function closeModal(){document.getElementById("key-modal").classList.remove("open");}
+function saveKey(){
+  const v=document.getElementById("modal-key-input").value.trim();
+  if(!v){alert("Please paste your API key.");return;}
+  if(!v.startsWith("sk-ant-")){alert("That does not look right - Anthropic API keys start with sk-ant-");return;}
+  sessionStorage.setItem("ws-api-key",v); closeModal(); updateKeyUI();
+}
+function removeKey(){
+  if(confirm("Remove your API key? The app will switch to free mode.")){
+    sessionStorage.removeItem("ws-api-key"); closeModal(); updateKeyUI();
+  }
+}
+function updateKeyUI(){
+  const has=!!getApiKey();
+  document.getElementById("key-status-btn").className="key-status"+(has?" has-key":"");
+  document.getElementById("key-status-label").textContent=has?"API key active":"Add API key";
+  const b=document.getElementById("mode-banner");
+  if(!b)return;
+  if(has){
+    b.className="mode-banner ai-mode";
+    b.innerHTML="<span><strong>AI mode active</strong> - Every worksheet is freshly generated by Claude AI, unique every time.</span><button class=\"banner-btn\" onclick=\"openModal()\">Change key</button>";
+  } else {
+    b.className="mode-banner free-mode";
+    b.innerHTML="<span><strong>Free mode</strong> - Using built-in question banks. Great for practice!</span><button class=\"banner-btn\" onclick=\"openModal()\">Unlock AI mode</button>";
+  }
+}
+document.getElementById("key-modal").addEventListener("click",e=>{if(e.target===e.currentTarget)closeModal();});
+
+// ── Progress ──────────────────────────────────────────────────────
+function saveProgress(){localStorage.setItem("ws-progress",JSON.stringify(progress));}
+function renderProgress(){
+  const g=document.getElementById("progress-grid");
+  if(!progress.length){g.innerHTML="<span class=\"no-progress\">No topics completed yet - tick them off as you go!</span>";return;}
+  g.innerHTML=progress.map((p,i)=>`<div class="badge"><span>${p.subj[0]} Y${p.year} - ${p.topic.length>20?p.topic.slice(0,18)+"...":p.topic}</span><span class="x" onclick="removeProg(${i})">x</span></div>`).join("");
+}
+function removeProg(i){progress.splice(i,1);saveProgress();renderProgress();buildTopics();}
+function clearProgress(){if(confirm("Clear all progress?")){progress=[];saveProgress();renderProgress();buildTopics();}}
+function saveWorksheetHistory(){localStorage.setItem("ws-history",JSON.stringify(worksheetHistory));}
+function addWorksheetHistory(mode,qCount,difficulty,childName){
+  const item={date:new Date().toISOString(),year:selYear,subj:selSubj,topic:selTopic,qCount,difficulty,mode,childName:childName||""};
+  worksheetHistory=[item,...worksheetHistory].slice(0,12);
+  saveWorksheetHistory();
+  renderWorksheetHistory();
+}
+function renderWorksheetHistory(){
+  const g=document.getElementById("worksheet-history-grid");
+  if(!g)return;
+  if(!worksheetHistory.length){g.innerHTML="<span class=\"no-progress\">Generated worksheets will appear here for parent review.</span>";return;}
+  g.innerHTML=worksheetHistory.map((h,i)=>{
+    const d=new Date(h.date);
+    const label=d.toLocaleDateString(undefined,{month:"short",day:"numeric"});
+    return `<div class="badge"><span>${label} - ${h.subj} Y${h.year} - ${h.topic.length>18?h.topic.slice(0,17)+"...":h.topic} (${h.qCount}q)</span><span class="x" onclick="removeWorksheetHistory(${i})">x</span></div>`;
+  }).join("");
+}
+function removeWorksheetHistory(i){worksheetHistory.splice(i,1);saveWorksheetHistory();renderWorksheetHistory();}
+function clearWorksheetHistory(){if(confirm("Clear worksheet history?")){worksheetHistory=[];saveWorksheetHistory();renderWorksheetHistory();}}
+
+function markDone(){
+  if(!selTopic)return;
+  const key=`${selYear}-${selSubj}-${selTopic}`;
+  if(!progress.find(p=>p.key===key)){progress.push({key,year:selYear,subj:selSubj,topic:selTopic});saveProgress();renderProgress();buildTopics();}
+  const btn=document.querySelector("[onclick=\"markDone()\"]");
+  btn.textContent="Marked!";btn.disabled=true;setTimeout(()=>{btn.textContent="Mark done";btn.disabled=false;},2000);
+}
+
+// ── Topic grid ────────────────────────────────────────────────────
+function buildTopics(){
+  const grid=document.getElementById("topic-grid");
+  const topics=CURRICULUM[selSubj][selYear]||[];
+  grid.innerHTML="";selTopic=null;document.getElementById("gen-btn").disabled=true;
+  document.getElementById("topic-label").textContent=`Topics - Year ${selYear} - ${selSubj}`;
+  const done=new Set(progress.filter(p=>p.year===selYear&&p.subj===selSubj).map(p=>p.topic));
+  topics.forEach(t=>{
+    const card=document.createElement("div");card.className="topic-card";
+    card.innerHTML=`<div class="tc-name">${done.has(t)?"(done) ":""}${t}</div><div class="tc-badge">Year ${selYear}</div>`;
+    card.onclick=()=>{document.querySelectorAll(".topic-card").forEach(c=>c.classList.remove("selected"));card.classList.add("selected");selTopic=t;document.getElementById("gen-btn").disabled=false;};
+    grid.appendChild(card);
+  });
+}
+document.querySelectorAll(".pill").forEach(p=>{p.onclick=()=>{document.querySelectorAll(".pill").forEach(x=>x.classList.remove("active"));p.classList.add("active");selYear=parseInt(p.dataset.year);buildTopics();};});
+document.querySelectorAll(".subj-btn").forEach(b=>{b.onclick=()=>{document.querySelectorAll(".subj-btn").forEach(x=>x.classList.remove("active"));b.classList.add("active");selSubj=b.dataset.subj;buildTopics();};});
+
+// ── Stars ─────────────────────────────────────────────────────────
+document.querySelectorAll(".star").forEach(s=>{
+  s.onmouseover=()=>lightStars(parseInt(s.dataset.v));
+  s.onmouseout=()=>lightStars(selStars);
+  s.onclick=()=>{selStars=parseInt(s.dataset.v);lightStars(selStars);document.getElementById("star-msg").textContent=STAR_MSGS[selStars];};
+});
+function lightStars(n){document.querySelectorAll(".star").forEach((s,i)=>s.classList.toggle("lit",i<n));}
+
+// ── Generate ──────────────────────────────────────────────────────
+document.getElementById("gen-btn").onclick=generateWorksheet;
+async function generateWorksheet(){
+  const apiKey=getApiKey();
+  const qCount=parseInt(document.getElementById("q-count").value);
+  const difficulty=document.getElementById("difficulty").value;
+  const childName=document.getElementById("child-name").value.trim();
+  const nameStr=childName||"__________________";
+
+  document.getElementById("worksheet-area").style.display="block";
+  document.getElementById("fab-print").classList.add("show");
+  document.getElementById("ws-title").textContent=`${selSubj} - ${selTopic} - Year ${selYear}`;
+  document.getElementById("ws-meta").textContent=`${qCount} questions - ${difficulty}${childName?" - "+childName:""}`;
+  selStars=0;lightStars(0);document.getElementById("star-msg").textContent="";
+  document.getElementById("worksheet-area").scrollIntoView({behavior:"smooth",block:"start"});
+
+  if(!apiKey){
+    const topicKey=`${selSubj}|${selTopic}`;
+    const bank=TOPIC_BANKS[topicKey]||FREE_BANKS[selSubj]||FREE_BANKS.Maths;
+    const difficultyPlan={
+      easy:{label:"Easy",note:"Start with questions 1 to 5 together, then let your child try the rest."},
+      medium:{label:"Medium",note:"Let your child attempt independently, then review any missed method steps."},
+      hard:{label:"Hard",note:"Expect some challenge. Award marks for method, working and clear explanations."}
+    }[difficulty]||{label:difficulty,note:"Review answers together and praise effort."};
+    const shuffled=[...bank].sort(()=>Math.random()-.5);
+    const picked=shuffled.slice(0,Math.min(qCount,shuffled.length));
+    const sep="=================================================================";
+    const questionLines=[sep,`${selSubj.toUpperCase()} WORKSHEET  -  Year ${selYear}`,`Topic: ${selTopic}`,`Difficulty: ${difficultyPlan.label}`,sep,
+      `Name: ${nameStr}           Date: ________________           Score: ___ / ${picked.length}`,sep,"",
+      ...picked.map((item,i)=>`${i+1}.  ${item.q}\n`)];
+    const answerLines=["",sep,"ANSWER SHEET",sep,"",...picked.map((item,i)=>`${i+1}.  ${item.a}`)];
+    const guideLines=["Parent marking guide:",`- Award 1 mark per correct answer. Total: ${picked.length} marks.`,"- Give half credit where the method is correct but the final answer has a small slip.",`- ${difficultyPlan.note}`,"- Revisit any topic with fewer than 70 percent correct before moving on."];
+    document.getElementById("ws-content").innerHTML=`<div>${questionLines.join("\n")}</div><div class="answer-sheet">${answerLines.join("\n")}</div><div class="marking-guide">${guideLines.join("<br>")}</div>`;
+    addWorksheetHistory("free",qCount,difficulty,childName);
+    return;
+  }
+
+  document.getElementById("ws-content").innerHTML="<div class=\"loading-msg\"><span class=\"spinner\"></span>Generating your worksheet - about 10 seconds...</div>";
+  const diffMap={easy:"easy confidence-building practice with smaller numbers and clear scaffolding",medium:"age-appropriate medium practice aligned to the UK National Curriculum",hard:"hard stretch practice with multi-step questions and reasoning"};
+  const prompt=`You are creating a printable school worksheet for a Year ${selYear} UK pupil.
+Subject: ${selSubj} | Topic: ${selTopic} | Questions: ${qCount} | Difficulty: ${diffMap[difficulty] || diffMap.medium}
+
+Format EXACTLY like this - no markdown, no asterisks:
+
+=================================================================
+${selSubj.toUpperCase()} WORKSHEET  -  Year ${selYear}
+Topic: ${selTopic}
+=================================================================
+Name: ${nameStr}           Date: ________________           Score: ___ / ${qCount}
+=================================================================
+
+Write ${qCount} numbered questions. Vary types (fill-blank, circle, true/false, short answer, match, solve, draw). Progress easier to harder. Use fun real-world contexts. Maths: show worked example before Q1. English: include a short passage for comprehension. Science: include at least one explain-why question.
+
+=================================================================
+ANSWER SHEET  (Parent/teacher - print separately)
+=================================================================
+[All answers numbered. Show working for Maths. Brief explanations for tricky answers.]
+
+=================================================================
+TIPS FOR PARENTS
+=================================================================
+[3 warm, practical bullet points to help a parent support their child with this topic. Include a simple marking guide with total marks, half-credit advice and what to review next.]`;
+
+  try{
+    const res=await fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","x-api-key":apiKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
+      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:2200,messages:[{role:"user",content:prompt}]})
+    });
+    const data=await res.json();
+    if(data.error)throw new Error(data.error.message);
+    document.getElementById("ws-content").textContent=data.content?.find(b=>b.type==="text")?.text||"";
+    addWorksheetHistory("ai",qCount,difficulty,childName);
+  }catch(e){
+    document.getElementById("ws-content").innerHTML=`<div class="error-msg">
+      <strong>Could not generate worksheet</strong><br><br>${e.message}<br><br>
+      - <a href="#" onclick="openModal();return false;">Click here to update your API key</a><br>
+      - Check credits at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a><br>
+      - Or use free built-in questions by removing your key
+    </div>`;
+  }
+}
+
+// ── Mode switcher ────────────────────────────────────────────────
+let currentMode = "print";
+function switchMode(mode){
+  currentMode = mode;
+  localStorage.setItem("ws-preferred-mode", mode);
+  const printTab = document.getElementById("tab-print");
+  const quizTab  = document.getElementById("tab-quiz");
+  const quizBar  = document.getElementById("quiz-link-bar");
+  const genBtn   = document.getElementById("gen-btn");
+  const quizBtn  = document.getElementById("quiz-launch-btn");
+
+  if(mode === "quiz"){
+    printTab.classList.remove("active");
+    quizTab.classList.add("active");
+    quizBar.style.display = "flex";
+    // Update quiz launch URL to include current selection
+    const params = new URLSearchParams({year:selYear, subj:selSubj, topic:selTopic||""});
+    if(quizBtn) quizBtn.href = "quiz.html?" + params.toString();
+    genBtn.textContent = "Launch quiz ▶";
+    genBtn.onclick = launchQuiz;
+  } else {
+    quizTab.classList.remove("active");
+    printTab.classList.add("active");
+    quizBar.style.display = "none";
+    genBtn.textContent = "Generate worksheet";
+    genBtn.onclick = generateWorksheet;
+  }
+}
+function launchQuiz(){
+  if(!selTopic){ alert("Please select a topic first."); return; }
+  const params = new URLSearchParams({year:selYear, subj:selSubj, topic:selTopic});
+  window.open("quiz.html?" + params.toString(), "_blank");
+}
+
+// ── Init - THE KEY FIX ────────────────────────────────────────────
+// Show app immediately if: user has an API key OR has previously chosen a mode
+// Only show welcome screen to genuine first-time visitors with no key
+(function init(){
+  const hasKey = !!getApiKey();
+  const choseMode = !!localStorage.getItem("ws-mode-chosen");
+  if(hasKey || choseMode){
+    showApp();
+  } else {
+    showWelcome();
+  }
+  // Restore preferred mode (print/quiz)
+  const savedMode = localStorage.getItem("ws-preferred-mode");
+  if(savedMode === "quiz") switchMode("quiz");
+  // Read URL params if coming from quiz (topic pre-selected)
+  const params = new URLSearchParams(window.location.search);
+  if(params.get("year")) {
+    const yr = parseInt(params.get("year"));
+    if(yr >= 1 && yr <= 6){
+      selYear = yr;
+      document.querySelectorAll(".pill").forEach(p=>{
+        p.classList.toggle("active", parseInt(p.dataset.year)===yr);
+      });
+    }
+  }
+  if(params.get("subj")) {
+    const subj = params.get("subj");
+    if(["Maths","English","Science","Reading","Vocabulary"].includes(subj)){
+      selSubj = subj;
+      document.querySelectorAll(".subj-btn").forEach(b=>{
+        b.classList.toggle("active", b.dataset.subj===subj);
+        if(b.dataset.subj===subj) b.classList.add("active");
+      });
+    }
+  }
+  updateKeyUI();
+  buildTopics();
+  renderProgress();
+  renderWorksheetHistory();
+  // Apply default font size from selector
+  const fsEl=document.getElementById("font-size");
+  if(fsEl) applyFontSize(fsEl.value);
+})();
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/worksheet-generator/sw.js').catch(err => {
+        console.warn('SW registration failed:', err);
+      });
+    }
+  </script>
+</body>
+</html>
